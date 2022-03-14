@@ -1,0 +1,61 @@
+indexes:
+
+- kind: Pets
+  properties:
+  - name: Species
+  - name: Gender
+
+- kind: Pets
+  properties:
+  - name: Species
+  - name: Breed
+
+- kind: Pets
+  properties:
+  - name: Species
+  - name: Size
+
+- kind: Pets
+  properties:
+  - name: Species
+  - name: Location_State
+
+- kind: Pets
+  properties:
+  - name: Species
+  - name: Age_Range
+
+- kind: Pets
+  properties:
+  - name: Species
+  - name: Availability
+
+- kind: Pets
+  properties:
+  - name: Type
+  - name: Gender
+
+- kind: Pets
+  properties:
+  - name: Type
+  - name: Breed
+
+- kind: Pets
+  properties:
+  - name: Type
+  - name: Size
+
+- kind: Pets
+  properties:
+  - name: Type
+  - name: Location_State
+
+- kind: Pets
+  properties:
+  - name: Type
+  - name: Age_Range
+
+- kind: Pets
+  properties:
+  - name: Type
+  - name: Availability

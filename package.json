@@ -1,0 +1,28 @@
+{
+  "name": "PetAPI",
+  "version": "1.0.0",
+  "description": "Pet API for Capstone course at OSU, Summer 2021",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "Arjun Kahlon",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/datastore": "6.2.0",
+    "@google-cloud/storage": "^5.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-handlebars": "^5.3.2",
+    "express-session": "^1.17.2",
+    "form-data": "^4.0.0",
+    "google-auth-library": "^7.3.0",
+    "https": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}

@@ -1,0 +1,35 @@
+<!-- resources: -->
+<!-- Frontend uses bootstrap features and methods for UI adapted from https://getbootstrap.com/docs/5.0/ -->
+<div class="container-sm">
+    <br>
+    <br>
+    <legend>Pending Adoption Requests</legend>
+    <table class="table caption-top">
+        <thead class="table-primary">
+            <tr>
+                <th>Date</th>
+                <th>Adopter</th>
+                <th>Pet ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#if pendingRequests}}
+                {{#each pendingRequests}}
+                    <tr>
+                        <td>{{this.date}}</td>
+                        <td>{{this.userId}}</td>
+                        <td>{{this.petId}}</td>
+                    </tr>
+                {{/each}}
+            {{else}}
+                <tr>
+                    <td>There are no pending requests.</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            {{/if}}
+        </tbody>
+    </table>
+    <br>
+    <a class="btn btn-primary" href="/">Back to home</a>
+</div>

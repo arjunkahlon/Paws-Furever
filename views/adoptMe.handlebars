@@ -1,0 +1,30 @@
+<h1>Adoption Inquiry</h1>
+
+{{#if pet}}
+    <h2>Thank you for your interest in {{pet.name}}!</h2>
+    <p>{{pet.name}} is currently {{pet.status}}.</p>
+
+    {{#if pet.image}}
+        <img src="{{pet.image}}" style="max-width: 300px;max-height: 200px;">
+    {{/if}}
+
+    {{#if pet.statusAvailable}}
+        <p>Hi {{#if user}}{{user}}{{else}}there{{/if}}!  We're sending your request to adopt {{pet.name}}!</p>
+        <p>One of our staff will contact you shortly to set up the next steps in your adoption.</p>
+        <p>We will update {{pet.name}}'s availability to 'pending' while you wait to hear from us.</p>
+    {{/if}}
+    {{#if pet.statusPending}}
+        <p>Hi {{#if user}}{{user}}{{else}}there{{/if}}!  {{pet.name}} is currently pending another adoption.</p>
+        <p>Please check back later.</p>
+    {{/if}}
+    {{#if pet.statusUnavailable}}
+        <p>Hi {{#if user}}{{user}}{{else}}there{{/if}}!  {{pet.name}} is not available right now.</p>
+        <p>Please check back later.</p>
+    {{/if}}
+    {{else}}
+<p>There seems to be a problem right now.  Please refresh the page or try again later.</p>
+{{/if}}
+
+
+
+<a href="/">Back to home</a>

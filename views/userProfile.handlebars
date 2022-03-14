@@ -1,0 +1,38 @@
+<!-- resources: -->
+<!-- Frontend uses bootstrap features and methods for UI adapted from https://getbootstrap.com/docs/5.0/ -->
+<br>
+<form class="form" enctype="multipart/form-data">
+    <div class="container-sm">
+        <fieldset>
+            <input type="text" id="userid" name="userid" value="{{id}}" hidden>
+            <legend>User Profile for <strong>{{firstName}}</strong></legend>
+            <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input class="form-control" type="text" id="name" name="name" value="{{name}}" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="eame" class="form-label">Email Address</label>
+                <input class="form-control" type="text" id="email" name="email" value="{{email}}" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="emailPrefSelect" class="form-label">Receive Email Updates</label>
+                <select class="form-select" name="emailPrefSelect" id="emailPrefSelect">
+                    <option value="Yes" {{{select getEmail 'Yes'}}}>Yes</option>
+                    <option value="No" {{{select getEmail 'No'}}}>No</option>
+                </select>
+            </div>
+
+            <button class="btn btn-success" id="emailPref" onclick="updateEmailPref();">Save</button>
+            <a class="btn btn-danger" type="submit" href="/">Close</a>
+
+        </fieldset>
+    </div>
+</form>
+
+<script>
+    window.addEventListener("DOMContentLoaded", function(){ 
+    document.getElementById("emailPref").addEventListener("click", ()=> {
+    });
+    // adapted from https://stackoverflow.com/questions/23835150/javascript-event-listener-for-multiple-buttons-with-same-class-name
+});
+</script>

@@ -1,0 +1,150 @@
+<!-- resources: -->
+<!-- Frontend uses bootstrap features and methods for UI adapted from https://getbootstrap.com/docs/5.0/ -->
+<form action="/" method="POST" name="addPet" enctype="multipart/form-data">
+    <div class="container-sm">
+        <fieldset>        
+            <legend>Add a new pet</legend>
+            <div class="mb-3">
+                <label for="Name" class="form-label">Pet Name</label>
+                <input class="form-control" type="text" id="Name" name="Name" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="Type" class="form-label">Type</label>
+                <select class="form-select" name="Type" id="Type" required>
+                    <option value=""></option>
+                    <option value="Cat">Cat</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Species" class="form-label">Species</label required>
+                <select class="form-select" name="Species" id="Species">
+                    <option value=""></option>
+                    <option value="Bird">Bird</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Dog">Dog</option>
+                    <option value="Fish">Fish</option>
+                    <option value="Hamster">Hamtser</option>
+                    <option value="Lizard">Lizard</option>
+                    <option value="Rabbit">Rabbit</option>
+                    <option value="Snake">Snake</option>
+                    <option value="Turtle">Turtle</option>                   
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Breed" class="form-label">Breed</label>
+                <input class="form-control" type="text" id="Breed" name="Breed">  
+            </div>
+
+            <div class="mb-3">
+                <label for="Disp_Other_Animals" class="form-label">Disposition - Good with Other Animals?</label>
+                <select class="form-select" name="Disp_Other_Animals" id="Disp_Other_Animals" required>
+                    <option value=""></option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Disp_Kids" class="form-label">Disposition - Good with Children?</label>
+                <select class="form-select" name="Disp_Kids" id="Disp_Kids" required>
+                    <option value=""></option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Disp_Leash" class="form-label">Disposition - Leash Required?</label>
+                <select class="form-select" name="Disp_Leash" id="Disp_Leash" required>
+                    <option value=""></option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>       
+
+            <div class="mb-3">
+                <label for="picture" class="form-label">Upload a picture</label>
+                <br>
+                <input type="file" id="picture" name="Picture1_URL_Primary" accept="image/png, image/jpeg" required>
+                <input type="file" id="picture" name="Picture2_URL" accept="image/png, image/jpeg">
+                <input type="file" id="picture" name="Picture3_URL" accept="image/png, image/jpeg">
+            </div>
+
+            <div class="mb-3">
+                <label for="Gender" class="form-label">Gender</label>
+                <select class="form-select" name="Gender" id="Gender" required>
+                    <option value=""></option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Altered" class="form-label">Is this pet spayed or neutered?</label>
+                <select class="form-select" name="Altered" id="Altered" required>
+                    <option value=""></option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="size" class="form-label">Size</label>
+                <select class="form-select" name="Size" id="Size" required>
+                    <option></option>
+                    <option value="Tiny">Tiny (less than 5 lbs) </option>
+                    <option value="Small">Small (6 - 20 lbs)</option>
+                    <option value="Medium">Medium (21 - 40 lbs)</option>
+                    <option value="Large">Large (40 - 80 lbs)</option>
+                    <option value="Extra Large">Extra Large (81+ lbs)</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Location - City" class="form-label">City</label>
+                <input class="form-control" type="text" id="Location - City" name="Location_City" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="Location - State" class="form-label">State</label>
+                <input class="form-control" type="text" id="Location - State" name="Location_State" maxlength="2" required>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="Age_Range" class="form-label">Age Range</label>
+                <select class="form-select" name="Age_Range" id="Age_Range" required>
+                    <option></option>
+                    <option value="Young">Young</option>
+                    <option value="Adult">Adult</option>
+                    <option value="Senior">Senior</option>
+                </select>
+            </div>
+        
+            <div class="mb-3">
+                <label for="Availability" class="form-label">Availability</label>
+                <select class="form-select" name="Availability" id="Availability" required>
+                    <option value=""></option>
+                    <option value="Available">Available</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Adopted">Adopted</option>
+                    <option value="Not available">Not available</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="Description" class="form-label">Description</label>
+                <textarea class="form-control" id="Description" name="Description" rows="5" cols="33" placeholder="Tell my story here!" required></textarea>
+            </div>
+
+            <input class="btn btn-success" type="submit" value="Add pet">
+            <button class="btn btn-danger" onclick="location.href='/';">Cancel</button>
+
+        </fieldset>
+    </div>
+</form>

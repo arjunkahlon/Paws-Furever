@@ -1,0 +1,140 @@
+<!-- resources: -->
+<!-- Frontend uses bootstrap features and methods for UI adapted from https://getbootstrap.com/docs/5.0/ -->
+<form id="updatePet" class="form" action="/profile/{{id}}">
+    <div class="container-sm">
+        <fieldset>
+            <legend>Update Pet Profile for <strong>{{Name}}</strong></legend>
+            <div class="mb-3">
+                <label for="Name" class="form-label">Pet Name</label>
+                <input class="form-control" type="text" id="Name" name="Name" value="{{Name}}">
+            </div>
+
+            <div class="mb-3">
+                <label for="Type" class="form-label">Type</label>
+                <select class="form-select" name="Type" id="Type">
+                    <option value="Cat" {{{select Type 'Cat'}}}>Cat</option>
+                    <option value="Dog" {{{select Type 'Dog'}}}>Dog</option>
+                    <option value="Other" {{{select Type 'Other'}}}>Other</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Species" class="form-label">Species</label>
+                <select class="form-select" name="Species" id="Species">
+                    <option value="Bird" {{{select Species 'Bird'}}}>Bird</option>
+                    <option value="Cat" {{{select Species 'Cat'}}}>Cat</option>
+                    <option value="Dog" {{{select Species 'Dog'}}}>Dog</option>
+                    <option value="Fish" {{{select Species 'Fish'}}}>Fish</option>
+                    <option value="Hamster" {{{select Species 'Hamster'}}}>Hamtser</option>
+                    <option value="Lizard" {{{select Species 'Lizard'}}}>Lizard</option>
+                    <option value="Rabbit" {{{select Species 'Rabbit'}}}>Rabbit</option>
+                    <option value="Snake" {{{select Species 'Snake'}}}>Snake</option>
+                    <option value="Turtle" {{{select Species 'Turtle'}}}>Turtle</option>                   
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Breed" class="form-label">Breed</label>
+                <input class="form-control" type="text" id="Breed" name={{Breed}}>  
+            </div>
+
+            <div class="mb-3">
+                <label for="Disp_Other_Animals" class="form-label">Disposition - Good with Other Animals?</label>
+                <select class="form-select" name="Disp_Other_Animals" id="Disp_Other_Animals">
+                    <option value="Yes" {{{select Disp_Other_Animals 'Yes'}}}>Yes</option>
+                    <option value="No" {{{select Disp_Other_Animals 'No'}}}>No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Disp_Kids" class="form-label">Disposition - Good with Children?</label>
+                <select class="form-select" name="Disp_Kids" id="Disp_Kids">
+                    <option value="Yes" {{{select Disp_Kids 'Yes'}}}>Yes</option>
+                    <option value="No" {{{select Disp_Kids 'No'}}}>No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Disp_Leash" class="form-label">Disposition - Leash Required?</label>
+                <select class="form-select" name="Disp_Leash" id="Disp_Leash">
+                    <option value="Yes" {{{select Disp_Leash 'Yes'}}}>Yes</option>
+                    <option value="No" {{{select Disp_Leash 'No'}}}>No</option>
+                </select>
+            </div>       
+
+            <div class="mb-3">
+                <label for="picture" class="form-label">Upload a new picture to replace an existing</label>
+                <br>
+                <input type="file" id="picture" name="Picture1_URL_Primary" accept="image/png, image/jpeg">
+                <input type="file" id="picture" name="Picture2_URL" accept="image/png, image/jpeg">
+                <input type="file" id="picture" name="Picture3_URL" accept="image/png, image/jpeg">
+            </div>
+
+            <div class="mb-3">
+                <label for="Gender" class="form-label">Gender</label>
+                <select class="form-select" name="Gender" id="Gender">
+                    <option value="Male" {{{select Gender 'Male'}}}>Male</option>
+                    <option value="Female" {{{select Gender 'Female'}}}>Female</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Altered" class="form-label">Is this pet spayed or neutered?</label>
+                <select class="form-select" name="Altered" id="Altered">
+                    <option value="Yes" {{{select Altered 'Yes'}}}>Yes</option>
+                    <option value="No" {{{select Altered 'No'}}}>No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="size" class="form-label">Size</label>
+                <select class="form-select" name="Size" id="Size">
+                    <option value="Tiny" {{{select Size 'Tiny'}}}>Tiny (less than 5 lbs) </option>
+                    <option value="Small" {{{select Size 'Small'}}}>Small (6 - 20 lbs)</option>
+                    <option value="Medium" {{{select Size 'Medium'}}}>Medium (21 - 40 lbs)</option>
+                    <option value="Large" {{{select Size 'Large'}}}>Large (40 - 80 lbs)</option>
+                    <option value="Extra Large" {{{select Size 'Extra Large'}}}>Extra Large (81+ lbs)</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Location - City" class="form-label">City</label>
+                <input class="form-control" type="text" id="Location - City" name="Location_City" value="{{Location_City}}">
+            </div>
+            
+            <div class="mb-3">
+                <label for="Location - State" class="form-label">State</label>
+                <input class="form-control" type="text" id="Location - State" name="Location_State" maxlength="2" value="{{Location_State}}">
+            </div>
+
+
+            <div class="mb-3">
+                <label for="Age_Range" class="form-label">Age Range</label>
+                <select class="form-select" name="Age_Range" id="Age_Range">
+                    <option value="Young" {{{select Age_Range 'Young'}}}>Young</option>
+                    <option value="Adult" {{{select Age_Range 'Adult'}}}>Adult</option>
+                    <option value="Senior" {{{select Age_Range 'Senior'}}}>Senior</option>
+                </select>
+            </div>
+        
+            <div class="mb-3">
+                <label for="Availability" class="form-label">Availability</label>
+                <select class="form-select" name="Availability" id="Availability">
+                    <option value="Available" {{{select Availability 'Available'}}}>Available</option>
+                    <option value="Pending" {{{select Availability 'Pending'}}}>Pending</option>
+                    <option value="Adopted" {{{select Availability 'Adopted'}}}>Adopted</option>
+                    <option value="Not available" {{{select Availability 'Not available'}}}>Not available</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="Description" class="form-label">Description</label>
+                <textarea class="form-control" id="Description" name="Description" rows="5" cols="33" placeholder="Tell my story here!">{{Description}}</textarea>
+            </div>
+
+            <input class="btn btn-success" type="submit" onclick="patchProfile({{id}});" value="Update Profile">
+            <a class="btn btn-danger" type="submit" href="/">Cancel</a>
+
+        </fieldset>
+    </div>
+</form>

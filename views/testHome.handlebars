@@ -1,0 +1,110 @@
+<!-- resources: -->
+<!-- Frontend uses bootstrap features and methods for UI adapted from https://getbootstrap.com/docs/5.0/ -->
+<br>
+<br>
+<div class="row text-center">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Welcome to Paws Furever!</h3>
+            <p class="card-text">This is a Pet Adoption Project.</p>
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="container-md">
+    <legend><strong>News</strong></legend>
+    <ul class="list-unstyled">
+        {{#if adoptedPets}}
+            {{#each adoptedPets}}
+            <li class="media">
+                <div class="media-body">
+                    <h5 class="mt-0 mb-1"><a href="/petProfile?petId={{this.id}}">{{this.Name}}</a> got adopted!</h5>
+                    <p>{{this.Description}}</p>
+                </div>
+            </li>
+            {{/each}}
+        {{else}}
+            <li class="media">
+                <div class="media-body">
+                    <h5 class="mt-0">There are no pending adoption requests today.</h5>
+                </div>
+            </li>
+        {{/if}}
+    </ul>
+</div>
+
+<br>
+<br>
+<div class="container-md">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {{#each pets}}
+        <div class="col">
+            <div class="card h-100 text-center" style="width: 20rem;">
+                <a href="/petProfile?petId={{this.id}}"><img src="{{Picture1_URL_Primary}}" class="card-img-top"
+                        alt="{{this.Name}}"></a>
+                <div class="card-body">
+                    <h5 class="card-title">{{this.Name}}</h5>
+                    <p class="card-text">{{this.Description}}</p>
+                </div>
+
+                <div class="card-footer">
+                    <a class="btn btn-primary" href="/petProfile?petId={{this.id}}">View</a>
+                    
+                    {{#if ../isAdmin}}
+                    <a class="btn btn-warning" href="/updatePetProfile?petId={{this.id}}">Update</a>
+                    <button class="btn btn-danger" data-toggle="modal"
+                        data-target="#deleteProfile{{this.id}}">Delete</button>
+                    <div class="modal fade" id="deleteProfile{{this.id}}" tabindex="-1"
+                        aria-labelledby="deleteProfileLabel{{this.id}}" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteProfileLabel{{this.id}}">Delete {{this.Name}}'s
+                                        Profile</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Confirm you want to delete this profile</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                    <button class="btn btn-danger" id="delProfile"
+                                        onclick="deleteProfile({{this.id}});">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/if}}
+
+                    {{#if ../isUser}}
+                    <a class='btn btn-primary'
+                        href="/adopt?petId={{this.id}}&petName={{this.Name}}&image={{this.Picture1_URL_Primary}}&status={{this.Availability}}">Adopt</a>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    <br>
+    <div class="row text-center">
+        <form action='/next' method="GET">
+            <input type="hidden" name="nextDbCursorURL" value={{nextDbCursorURL}}>
+            <button class="btn btn-primary" type="submit">See More Profiles</button>
+        </form>
+    </div>
+    <br>
+    <br>
+
+</div>
+
+<script>
+    window.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("delProfile").addEventListener("click", () => {
+        });
+        // adapted from https://stackoverflow.com/questions/23835150/javascript-event-listener-for-multiple-buttons-with-same-class-name
+    });
+</script>
